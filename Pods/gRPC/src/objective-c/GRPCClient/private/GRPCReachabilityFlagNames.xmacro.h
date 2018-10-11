@@ -17,8 +17,7 @@
  */
 
 /**
- * "X-macro" file that lists the flags names of Apple's Network Reachability
-API, along with a nice
+ * "X-macro" file that lists the flags names of Apple's Network Reachability API, along with a nice
  * Objective-C method name used to query each of them.
  *
  * Example usage: To generate a dictionary from flag value to name, one can do:
@@ -30,8 +29,7 @@ API, along with a nice
 #undef GRPC_XMACRO_ITEM
   };
 
-  XCTAssertEqualObjects(flagNames[@(kSCNetworkReachabilityFlagsIsWWAN)],
-@"isCell");
+  XCTAssertEqualObjects(flagNames[@(kSCNetworkReachabilityFlagsIsWWAN)], @"isCell");
 
  */
 

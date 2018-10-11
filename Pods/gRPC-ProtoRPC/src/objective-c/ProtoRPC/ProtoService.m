@@ -24,10 +24,7 @@
 #import "ProtoMethod.h"
 #import "ProtoRPC.h"
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-implementations"
 @implementation ProtoService {
-#pragma clang diagnostic pop
   NSString *_host;
   NSString *_packageName;
   NSString *_serviceName;
@@ -57,8 +54,9 @@
                 requestsWriter:(GRXWriter *)requestsWriter
                  responseClass:(Class)responseClass
             responsesWriteable:(id<GRXWriteable>)responsesWriteable {
-  GRPCProtoMethod *methodName =
-      [[GRPCProtoMethod alloc] initWithPackage:_packageName service:_serviceName method:method];
+  GRPCProtoMethod *methodName = [[GRPCProtoMethod alloc] initWithPackage:_packageName
+                                                                 service:_serviceName
+                                                                  method:method];
   return [[GRPCProtoCall alloc] initWithHost:_host
                                       method:methodName
                               requestsWriter:requestsWriter
