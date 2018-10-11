@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>822344027535-52pajob0hubpvblu1jcgnmlfr29hd24g.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.822344027535-52pajob0hubpvblu1jcgnmlfr29hd24g</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDVIgq3s-a_aqbo0qcCA43VT77_mvY0oEw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>822344027535</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.kelreid.SuicidePrevention</string>
+	<key>PROJECT_ID</key>
+	<string>suicideprevention-e8d4a</string>
+	<key>STORAGE_BUCKET</key>
+	<string>suicideprevention-e8d4a.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:822344027535:ios:b4b5a79ad5233e8a</string>
+	<key>DATABASE_URL</key>
+	<string>https://suicideprevention-e8d4a.firebaseio.com</string>
+</dict>
+</plist>
