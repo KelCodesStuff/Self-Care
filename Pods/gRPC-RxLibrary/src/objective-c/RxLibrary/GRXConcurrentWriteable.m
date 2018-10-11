@@ -46,7 +46,8 @@
 }
 
 - (instancetype)initWithWriteable:(id<GRXWriteable>)writeable {
-  return [self initWithWriteable:writeable dispatchQueue:dispatch_get_main_queue()];
+  return [self initWithWriteable:writeable
+                   dispatchQueue:dispatch_get_main_queue()];
 }
 
 - (void)enqueueValue:(id)value completionHandler:(void (^)(void))handler {
@@ -63,25 +64,21 @@
 }
 
 - (void)enqueueSuccessfulCompletion {
-  __weak typeof(self) weakSelf = self;
   dispatch_async(_writeableQueue, ^{
-    typeof(self) strongSelf = weakSelf;
-    if (strongSelf) {
-      BOOL finished = NO;
-      @synchronized(strongSelf) {
-        if (!strongSelf->_alreadyFinished) {
-          strongSelf->_alreadyFinished = YES;
-        } else {
-          finished = YES;
-        }
+    BOOL finished = NO;
+    @synchronized (self) {
+      if (!_alreadyFinished) {
+        _alreadyFinished = YES;
+      } else {
+        finished = YES;
       }
-      if (!finished) {
-        // Cancellation is now impossible. None of the other three blocks can run concurrently with
-        // this one.
-        [strongSelf.writeable writesFinishedWithError:nil];
-        // Skip any possible message to the wrapped writeable enqueued after this one.
-        strongSelf.writeable = nil;
-      }
+    }
+    if (!finished) {
+      // Cancellation is now impossible. None of the other three blocks can run concurrently with
+      // this one.
+      [self.writeable writesFinishedWithError:nil];
+      // Skip any possible message to the wrapped writeable enqueued after this one.
+      self.writeable = nil;
     }
   });
 }
@@ -89,7 +86,7 @@
 - (void)cancelWithError:(NSError *)error {
   NSAssert(error, @"For a successful completion, use enqueueSuccessfulCompletion.");
   BOOL finished = NO;
-  @synchronized(self) {
+  @synchronized (self) {
     if (!_alreadyFinished) {
       _alreadyFinished = YES;
     } else {
@@ -111,7 +108,7 @@
 
 - (void)cancelSilently {
   BOOL finished = NO;
-  @synchronized(self) {
+  @synchronized (self) {
     if (!_alreadyFinished) {
       _alreadyFinished = YES;
     } else {

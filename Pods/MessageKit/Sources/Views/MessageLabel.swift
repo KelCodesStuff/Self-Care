@@ -112,30 +112,26 @@ open class MessageLabel: UILabel {
             if !isConfiguring { setNeedsDisplay() }
         }
     }
-    
-    internal var messageLabelFont: UIFont?
 
     private var attributesNeedUpdate = false
 
-    public static var defaultAttributes: [NSAttributedStringKey: Any] = {
+    public static var defaultAttributes: [NSAttributedString.Key: Any] = {
         return [
-            NSAttributedStringKey.foregroundColor: UIColor.darkText,
-            NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue,
-            NSAttributedStringKey.underlineColor: UIColor.darkText
+            NSAttributedString.Key.foregroundColor: UIColor.darkText,
+            NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue,
+            NSAttributedString.Key.underlineColor: UIColor.darkText
         ]
     }()
 
-    open internal(set) var addressAttributes: [NSAttributedStringKey: Any] = defaultAttributes
+    open internal(set) var addressAttributes: [NSAttributedString.Key: Any] = defaultAttributes
 
-    open internal(set) var dateAttributes: [NSAttributedStringKey: Any] = defaultAttributes
+    open internal(set) var dateAttributes: [NSAttributedString.Key: Any] = defaultAttributes
 
-    open internal(set) var phoneNumberAttributes: [NSAttributedStringKey: Any] = defaultAttributes
+    open internal(set) var phoneNumberAttributes: [NSAttributedString.Key: Any] = defaultAttributes
 
-    open internal(set) var urlAttributes: [NSAttributedStringKey: Any] = defaultAttributes
-    
-    open internal(set) var transitInformationAttributes: [NSAttributedStringKey: Any] = defaultAttributes
+    open internal(set) var urlAttributes: [NSAttributedString.Key: Any] = defaultAttributes
 
-    public func setAttributes(_ attributes: [NSAttributedStringKey: Any], detector: DetectorType) {
+    public func setAttributes(_ attributes: [NSAttributedString.Key: Any], detector: DetectorType) {
         switch detector {
         case .phoneNumber:
             phoneNumberAttributes = attributes
@@ -145,8 +141,6 @@ open class MessageLabel: UILabel {
             dateAttributes = attributes
         case .url:
             urlAttributes = attributes
-        case .transitInformation:
-            transitInformationAttributes = attributes
         }
         if isConfiguring {
             attributesNeedUpdate = true
@@ -171,7 +165,7 @@ open class MessageLabel: UILabel {
 
     open override func drawText(in rect: CGRect) {
 
-        let insetRect = UIEdgeInsetsInsetRect(rect, textInsets)
+        let insetRect = rect.inset(by: textInsets)
         textContainer.size = CGSize(width: insetRect.width, height: rect.height)
 
         let origin = insetRect.origin
@@ -263,7 +257,7 @@ open class MessageLabel: UILabel {
         }
     }
 
-    private func detectorAttributes(for detectorType: DetectorType) -> [NSAttributedStringKey: Any] {
+    private func detectorAttributes(for detectorType: DetectorType) -> [NSAttributedString.Key: Any] {
 
         switch detectorType {
         case .address:
@@ -274,13 +268,11 @@ open class MessageLabel: UILabel {
             return phoneNumberAttributes
         case .url:
             return urlAttributes
-        case .transitInformation:
-            return transitInformationAttributes
         }
 
     }
 
-    private func detectorAttributes(for checkingResultType: NSTextCheckingResult.CheckingType) -> [NSAttributedStringKey: Any] {
+    private func detectorAttributes(for checkingResultType: NSTextCheckingResult.CheckingType) -> [NSAttributedString.Key: Any] {
         switch checkingResultType {
         case .address:
             return addressAttributes
@@ -290,8 +282,6 @@ open class MessageLabel: UILabel {
             return phoneNumberAttributes
         case .link:
             return urlAttributes
-        case .transitInformation:
-            return transitInformationAttributes
         default:
             fatalError(MessageKitError.unrecognizedCheckingResult)
         }
@@ -334,12 +324,6 @@ open class MessageLabel: UILabel {
                 let tuple: (NSRange, MessageTextCheckingType) = (result.range, .link(result.url))
                 ranges.append(tuple)
                 rangesForDetectors.updateValue(ranges, forKey: .url)
-            case .transitInformation:
-                var ranges = rangesForDetectors[.transitInformation] ?? []
-                let tuple: (NSRange, MessageTextCheckingType) = (result.range, .transitInfoComponents(result.components))
-                ranges.append(tuple)
-                rangesForDetectors.updateValue(ranges, forKey: .transitInformation)
-
             default:
                 fatalError("Received an unrecognized NSTextCheckingResult.CheckingType")
             }
@@ -354,9 +338,10 @@ open class MessageLabel: UILabel {
         guard textStorage.length > 0 else { return nil }
 
         var location = location
+        let textOffset = CGPoint(x: textInsets.left, y: textInsets.right)
 
-        location.x -= textInsets.left
-        location.y -= textInsets.top
+        location.x -= textOffset.x
+        location.y -= textOffset.y
 
         let index = layoutManager.glyphIndex(for: location, in: textContainer)
 
@@ -372,7 +357,7 @@ open class MessageLabel: UILabel {
 
     }
 
-  internal func handleGesture(_ touchLocation: CGPoint) -> Bool {
+  func handleGesture(_ touchLocation: CGPoint) -> Bool {
 
         guard let index = stringIndex(at: touchLocation) else { return false }
 
@@ -406,13 +391,6 @@ open class MessageLabel: UILabel {
         case let .link(url):
             guard let url = url else { return }
             handleURL(url)
-        case let .transitInfoComponents(transitInformation):
-            var transformedTransitInformation = [String: String]()
-            guard let transitInformation = transitInformation else { return }
-            transitInformation.forEach { (key, value) in
-                transformedTransitInformation[key.rawValue] = value
-            }
-            handleTransitInformation(transformedTransitInformation)
         }
     }
     
@@ -432,10 +410,6 @@ open class MessageLabel: UILabel {
         delegate?.didSelectPhoneNumber(phoneNumber)
     }
     
-    private func handleTransitInformation(_ components: [String: String]) {
-        delegate?.didSelectTransitInformation(components)
-    }
-    
 }
 
 private enum MessageTextCheckingType {
@@ -443,5 +417,4 @@ private enum MessageTextCheckingType {
     case date(Date?)
     case phoneNumber(String?)
     case link(URL?)
-    case transitInfoComponents([NSTextCheckingKey: String]?)
 }
