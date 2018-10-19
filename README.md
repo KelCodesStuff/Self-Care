@@ -1,3 +1,3 @@
 # Self Care
 
-This an ios app named Self Care being developed for Arrayia Perkins.
+This is an ios app named Self Care being developed for Arrayia Perkins.
