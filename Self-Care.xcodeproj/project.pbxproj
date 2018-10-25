@@ -45,7 +45,7 @@
 		4859776320A7A1BD00429CB3 /* DatabaseRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRepresentation.swift; sourceTree = "<group>"; };
 		4859776520A7AD3800429CB3 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		4859776720A7D34400429CB3 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		48AC74C320A66C2A00AA1788 /* RWRC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RWRC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		48AC74C320A66C2A00AA1788 /* SelfCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelfCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48AC74C620A66C2A00AA1788 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48AC74CD20A66C2C00AA1788 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48AC74D020A66C2C00AA1788 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 		48AC74C420A66C2A00AA1788 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				48AC74C320A66C2A00AA1788 /* RWRC.app */,
+				48AC74C320A66C2A00AA1788 /* SelfCare.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,9 +173,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		48AC74C220A66C2A00AA1788 /* RWRC */ = {
+		48AC74C220A66C2A00AA1788 /* SelfCare */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 48AC74D520A66C2C00AA1788 /* Build configuration list for PBXNativeTarget "RWRC" */;
+			buildConfigurationList = 48AC74D520A66C2C00AA1788 /* Build configuration list for PBXNativeTarget "SelfCare" */;
 			buildPhases = (
 				CEB9431455C293FFAFA59FB6 /* [CP] Check Pods Manifest.lock */,
 				48AC74BF20A66C2A00AA1788 /* Sources */,
@@ -187,9 +187,9 @@
 			);
 			dependencies = (
 			);
-			name = RWRC;
+			name = SelfCare;
 			productName = RWRC;
-			productReference = 48AC74C320A66C2A00AA1788 /* RWRC.app */;
+			productReference = 48AC74C320A66C2A00AA1788 /* SelfCare.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -208,7 +208,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 48AC74BE20A66C2A00AA1788 /* Build configuration list for PBXProject "Suicide-Prevention" */;
+			buildConfigurationList = 48AC74BE20A66C2A00AA1788 /* Build configuration list for PBXProject "Self-Care" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -221,7 +221,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				48AC74C220A66C2A00AA1788 /* RWRC */,
+				48AC74C220A66C2A00AA1788 /* SelfCare */,
 			);
 		};
 /* End PBXProject section */
@@ -492,7 +492,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		48AC74BE20A66C2A00AA1788 /* Build configuration list for PBXProject "Suicide-Prevention" */ = {
+		48AC74BE20A66C2A00AA1788 /* Build configuration list for PBXProject "Self-Care" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				48AC74D320A66C2C00AA1788 /* Debug */,
@@ -501,7 +501,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		48AC74D520A66C2C00AA1788 /* Build configuration list for PBXNativeTarget "RWRC" */ = {
+		48AC74D520A66C2C00AA1788 /* Build configuration list for PBXNativeTarget "SelfCare" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				48AC74D620A66C2C00AA1788 /* Debug */,
