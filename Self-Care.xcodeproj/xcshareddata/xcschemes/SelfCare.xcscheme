@@ -28,6 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0C77B42E218280A200E6A563"
+               BuildableName = "SelfCareUITests.xctest"
+               BlueprintName = "SelfCareUITests"
+               ReferencedContainer = "container:Self-Care.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0C77B43C218280BA00E6A563"
+               BuildableName = "SelfCareTests.xctest"
+               BlueprintName = "SelfCareTests"
+               ReferencedContainer = "container:Self-Care.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
