@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "48AC74C220A66C2A00AA1788"
-               BuildableName = "RWRC.app"
-               BlueprintName = "RWRC"
-               ReferencedContainer = "container:Suicide-Prevention.xcodeproj">
+               BuildableName = "SelfCare.app"
+               BlueprintName = "SelfCare"
+               ReferencedContainer = "container:Self-Care.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "48AC74C220A66C2A00AA1788"
-            BuildableName = "RWRC.app"
-            BlueprintName = "RWRC"
-            ReferencedContainer = "container:Suicide-Prevention.xcodeproj">
+            BuildableName = "SelfCare.app"
+            BlueprintName = "SelfCare"
+            ReferencedContainer = "container:Self-Care.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "48AC74C220A66C2A00AA1788"
-            BuildableName = "RWRC.app"
-            BlueprintName = "RWRC"
-            ReferencedContainer = "container:Suicide-Prevention.xcodeproj">
+            BuildableName = "SelfCare.app"
+            BlueprintName = "SelfCare"
+            ReferencedContainer = "container:Self-Care.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "48AC74C220A66C2A00AA1788"
-            BuildableName = "RWRC.app"
-            BlueprintName = "RWRC"
-            ReferencedContainer = "container:Suicide-Prevention.xcodeproj">
+            BuildableName = "SelfCare.app"
+            BlueprintName = "SelfCare"
+            ReferencedContainer = "container:Self-Care.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
