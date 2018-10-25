@@ -1,5 +1,10 @@
-/// Copyright (c) 2018
-///
+//
+//  UIView+Additions.swift
+//  Extensions
+//
+//  Created by Kelvin Reid on 10/01/18.
+//  Copyright © 2018 Kelvin Reid. All rights reserved.
+//
 
 import UIKit
 
