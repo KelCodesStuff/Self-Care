@@ -14,6 +14,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B047582D2B4CEDF4CB580EBD1DCB0F32"
+               BuildableName = "Pods_RWRC.framework"
+               BlueprintName = "Pods-RWRC"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "48AC74C220A66C2A00AA1788"
                BuildableName = "SelfCare.app"
                BlueprintName = "SelfCare"
