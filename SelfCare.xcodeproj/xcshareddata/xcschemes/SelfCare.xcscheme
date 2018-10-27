@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7EA4D9F69D50AD7B9CDD4E241E4FE407"
-               BuildableName = "Pods_RWRCTests.framework"
-               BlueprintName = "Pods-RWRCTests"
+               BlueprintIdentifier = "E84258C96FE425B3ED9DC6B4D0ACBEE4"
+               BuildableName = "Pods_RWRC.framework"
+               BlueprintName = "Pods-RWRC"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,9 +42,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E84258C96FE425B3ED9DC6B4D0ACBEE4"
-               BuildableName = "Pods_RWRC.framework"
-               BlueprintName = "Pods-RWRC"
+               BlueprintIdentifier = "7EA4D9F69D50AD7B9CDD4E241E4FE407"
+               BuildableName = "Pods_RWRCTests.framework"
+               BlueprintName = "Pods-RWRCTests"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -74,9 +74,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0CFA904B2184C34400E09720"
-               BuildableName = "SelfCareUITests.xctest"
-               BlueprintName = "SelfCareUITests"
+               BlueprintIdentifier = "0CFA90592184C35200E09720"
+               BuildableName = "SelfCareTests.xctest"
+               BlueprintName = "SelfCareTests"
                ReferencedContainer = "container:SelfCare.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -84,9 +84,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0CFA90592184C35200E09720"
-               BuildableName = "SelfCareTests.xctest"
-               BlueprintName = "SelfCareTests"
+               BlueprintIdentifier = "0CFA904B2184C34400E09720"
+               BuildableName = "SelfCareUITests.xctest"
+               BlueprintName = "SelfCareUITests"
                ReferencedContainer = "container:SelfCare.xcodeproj">
             </BuildableReference>
          </TestableReference>
