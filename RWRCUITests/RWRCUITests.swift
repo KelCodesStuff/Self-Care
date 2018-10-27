@@ -1,14 +1,14 @@
 //
-//  SelfCareUITests.swift
-//  SelfCareUITests
+//  RWRCUITests.swift
+//  RWRCUITests
 //
 //  Created by Kelvin Reid on 10/27/18.
-//  Copyright © 2018 Kelvin Reid. All rights reserved.
+//  Copyright © 2018 Razeware. All rights reserved.
 //
 
 import XCTest
 
-class SelfCareTestsUITests: XCTestCase {
+class RWRCUITests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

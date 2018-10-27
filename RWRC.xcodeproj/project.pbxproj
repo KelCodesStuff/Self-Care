@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0CFA904F2184C34400E09720 /* SelfCareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFA904E2184C34400E09720 /* SelfCareUITests.swift */; };
-		0CFA905D2184C35200E09720 /* SelfCareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFA905C2184C35200E09720 /* SelfCareTests.swift */; };
+		0CFA904F2184C34400E09720 /* RWRCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFA904E2184C34400E09720 /* RWRCUITests.swift */; };
+		0CFA905D2184C35200E09720 /* RWRCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFA905C2184C35200E09720 /* RWRCTests.swift */; };
 		4814E1F920CFF62A00E38239 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4814E1F820CFF62A00E38239 /* GoogleService-Info.plist */; };
 		481A352C20A8E6DC008CD16B /* UIImage+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481A352B20A8E6DC008CD16B /* UIImage+Additions.swift */; };
 		481A352E20A8E956008CD16B /* UICollectionView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481A352D20A8E956008CD16B /* UICollectionView+Additions.swift */; };
@@ -51,11 +51,11 @@
 
 /* Begin PBXFileReference section */
 		01611C8995F0150292527443 /* Pods-RWRCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RWRCTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RWRCTests/Pods-RWRCTests.debug.xcconfig"; sourceTree = "<group>"; };
-		0CFA904C2184C34400E09720 /* SelfCareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SelfCareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0CFA904E2184C34400E09720 /* SelfCareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfCareUITests.swift; sourceTree = "<group>"; };
+		0CFA904C2184C34400E09720 /* RWRCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RWRCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CFA904E2184C34400E09720 /* RWRCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RWRCUITests.swift; sourceTree = "<group>"; };
 		0CFA90502184C34400E09720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0CFA905A2184C35200E09720 /* SelfCareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SelfCareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0CFA905C2184C35200E09720 /* SelfCareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfCareTests.swift; sourceTree = "<group>"; };
+		0CFA905A2184C35200E09720 /* RWRCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RWRCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CFA905C2184C35200E09720 /* RWRCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RWRCTests.swift; sourceTree = "<group>"; };
 		0CFA905E2184C35200E09720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		138B8A2C43BFE3C4675D8981 /* Pods-RWRC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RWRC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RWRC/Pods-RWRC.debug.xcconfig"; sourceTree = "<group>"; };
 		1533FBD30B4FF7CBB08014E9 /* Pods_RWRCUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RWRCUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,7 +75,7 @@
 		4859776320A7A1BD00429CB3 /* DatabaseRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRepresentation.swift; sourceTree = "<group>"; };
 		4859776520A7AD3800429CB3 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		4859776720A7D34400429CB3 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		48AC74C320A66C2A00AA1788 /* SelfCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelfCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		48AC74C320A66C2A00AA1788 /* RWRC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RWRC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48AC74C620A66C2A00AA1788 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48AC74CD20A66C2C00AA1788 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48AC74D020A66C2C00AA1788 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -115,22 +115,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0CFA904D2184C34400E09720 /* SelfCareUITests */ = {
+		0CFA904D2184C34400E09720 /* RWRCUITests */ = {
 			isa = PBXGroup;
 			children = (
-				0CFA904E2184C34400E09720 /* SelfCareUITests.swift */,
+				0CFA904E2184C34400E09720 /* RWRCUITests.swift */,
 				0CFA90502184C34400E09720 /* Info.plist */,
 			);
-			path = SelfCareUITests;
+			path = RWRCUITests;
 			sourceTree = "<group>";
 		};
-		0CFA905B2184C35200E09720 /* SelfCareTests */ = {
+		0CFA905B2184C35200E09720 /* RWRCTests */ = {
 			isa = PBXGroup;
 			children = (
-				0CFA905C2184C35200E09720 /* SelfCareTests.swift */,
+				0CFA905C2184C35200E09720 /* RWRCTests.swift */,
 				0CFA905E2184C35200E09720 /* Info.plist */,
 			);
-			path = SelfCareTests;
+			path = RWRCTests;
 			sourceTree = "<group>";
 		};
 		27078574AC22DE5EDD982EC5 /* Frameworks */ = {
@@ -157,9 +157,9 @@
 		48AC74BA20A66C2A00AA1788 = {
 			isa = PBXGroup;
 			children = (
-				48AC74C520A66C2A00AA1788 /* SelfCare */,
-				0CFA904D2184C34400E09720 /* SelfCareUITests */,
-				0CFA905B2184C35200E09720 /* SelfCareTests */,
+				48AC74C520A66C2A00AA1788 /* RWRC */,
+				0CFA904D2184C34400E09720 /* RWRCUITests */,
+				0CFA905B2184C35200E09720 /* RWRCTests */,
 				48AC74C420A66C2A00AA1788 /* Products */,
 				6EDC27F561A43516D3AEBF14 /* Pods */,
 				27078574AC22DE5EDD982EC5 /* Frameworks */,
@@ -171,14 +171,14 @@
 		48AC74C420A66C2A00AA1788 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				48AC74C320A66C2A00AA1788 /* SelfCare.app */,
-				0CFA904C2184C34400E09720 /* SelfCareUITests.xctest */,
-				0CFA905A2184C35200E09720 /* SelfCareTests.xctest */,
+				48AC74C320A66C2A00AA1788 /* RWRC.app */,
+				0CFA904C2184C34400E09720 /* RWRCUITests.xctest */,
+				0CFA905A2184C35200E09720 /* RWRCTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		48AC74C520A66C2A00AA1788 /* SelfCare */ = {
+		48AC74C520A66C2A00AA1788 /* RWRC */ = {
 			isa = PBXGroup;
 			children = (
 				48AC74DA20A66C9700AA1788 /* Controllers */,
@@ -187,7 +187,7 @@
 				48AC74DC20A66CB800AA1788 /* Supporting Files */,
 				48AC74D820A66C7A00AA1788 /* View Controllers */,
 			);
-			path = SelfCare;
+			path = RWRC;
 			sourceTree = "<group>";
 		};
 		48AC74D820A66C7A00AA1788 /* View Controllers */ = {
@@ -249,9 +249,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0CFA904B2184C34400E09720 /* SelfCareUITests */ = {
+		0CFA904B2184C34400E09720 /* RWRCUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0CFA90552184C34400E09720 /* Build configuration list for PBXNativeTarget "SelfCareUITests" */;
+			buildConfigurationList = 0CFA90552184C34400E09720 /* Build configuration list for PBXNativeTarget "RWRCUITests" */;
 			buildPhases = (
 				1970816A75DA89A620DF5BC0 /* [CP] Check Pods Manifest.lock */,
 				0CFA90482184C34400E09720 /* Sources */,
@@ -263,14 +263,14 @@
 			dependencies = (
 				0CFA90522184C34400E09720 /* PBXTargetDependency */,
 			);
-			name = SelfCareUITests;
+			name = RWRCUITests;
 			productName = RWRCUITests;
-			productReference = 0CFA904C2184C34400E09720 /* SelfCareUITests.xctest */;
+			productReference = 0CFA904C2184C34400E09720 /* RWRCUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		0CFA90592184C35200E09720 /* SelfCareTests */ = {
+		0CFA90592184C35200E09720 /* RWRCTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0CFA90612184C35200E09720 /* Build configuration list for PBXNativeTarget "SelfCareTests" */;
+			buildConfigurationList = 0CFA90612184C35200E09720 /* Build configuration list for PBXNativeTarget "RWRCTests" */;
 			buildPhases = (
 				BE3E760BA49A0FBB1FCD57B5 /* [CP] Check Pods Manifest.lock */,
 				0CFA90562184C35200E09720 /* Sources */,
@@ -282,14 +282,14 @@
 			dependencies = (
 				0CFA90602184C35200E09720 /* PBXTargetDependency */,
 			);
-			name = SelfCareTests;
+			name = RWRCTests;
 			productName = RWRCTests;
-			productReference = 0CFA905A2184C35200E09720 /* SelfCareTests.xctest */;
+			productReference = 0CFA905A2184C35200E09720 /* RWRCTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		48AC74C220A66C2A00AA1788 /* SelfCare */ = {
+		48AC74C220A66C2A00AA1788 /* RWRC */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 48AC74D520A66C2C00AA1788 /* Build configuration list for PBXNativeTarget "SelfCare" */;
+			buildConfigurationList = 48AC74D520A66C2C00AA1788 /* Build configuration list for PBXNativeTarget "RWRC" */;
 			buildPhases = (
 				CEB9431455C293FFAFA59FB6 /* [CP] Check Pods Manifest.lock */,
 				48AC74BF20A66C2A00AA1788 /* Sources */,
@@ -301,9 +301,9 @@
 			);
 			dependencies = (
 			);
-			name = SelfCare;
+			name = RWRC;
 			productName = RWRC;
-			productReference = 48AC74C320A66C2A00AA1788 /* SelfCare.app */;
+			productReference = 48AC74C320A66C2A00AA1788 /* RWRC.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -330,7 +330,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 48AC74BE20A66C2A00AA1788 /* Build configuration list for PBXProject "SelfCare" */;
+			buildConfigurationList = 48AC74BE20A66C2A00AA1788 /* Build configuration list for PBXProject "RWRC" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -343,9 +343,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				48AC74C220A66C2A00AA1788 /* SelfCare */,
-				0CFA904B2184C34400E09720 /* SelfCareUITests */,
-				0CFA90592184C35200E09720 /* SelfCareTests */,
+				48AC74C220A66C2A00AA1788 /* RWRC */,
+				0CFA904B2184C34400E09720 /* RWRCUITests */,
+				0CFA90592184C35200E09720 /* RWRCTests */,
 			);
 		};
 /* End PBXProject section */
@@ -488,7 +488,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CFA904F2184C34400E09720 /* SelfCareUITests.swift in Sources */,
+				0CFA904F2184C34400E09720 /* RWRCUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,7 +496,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CFA905D2184C35200E09720 /* SelfCareTests.swift in Sources */,
+				0CFA905D2184C35200E09720 /* RWRCTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,12 +526,12 @@
 /* Begin PBXTargetDependency section */
 		0CFA90522184C34400E09720 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 48AC74C220A66C2A00AA1788 /* SelfCare */;
+			target = 48AC74C220A66C2A00AA1788 /* RWRC */;
 			targetProxy = 0CFA90512184C34400E09720 /* PBXContainerItemProxy */;
 		};
 		0CFA90602184C35200E09720 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 48AC74C220A66C2A00AA1788 /* SelfCare */;
+			target = 48AC74C220A66C2A00AA1788 /* RWRC */;
 			targetProxy = 0CFA905F2184C35200E09720 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -560,16 +560,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
-					"$(FRAMEWORK_SEARCH_PATHS)",
 				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kelvinreid.RWRCUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SelfCare;
+				TEST_TARGET_NAME = RWRC;
 			};
 			name = Debug;
 		};
@@ -585,15 +583,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
-					"$(FRAMEWORK_SEARCH_PATHS)",
 				);
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kelvinreid.RWRCUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SelfCare;
+				TEST_TARGET_NAME = RWRC;
 			};
 			name = Release;
 		};
@@ -610,7 +606,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
-					"$(FRAMEWORK_SEARCH_PATHS)",
 				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -618,7 +613,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SelfCare.app/SelfCare";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RWRC.app/RWRC";
 			};
 			name = Debug;
 		};
@@ -635,14 +630,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
-					"$(FRAMEWORK_SEARCH_PATHS)",
 				);
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kelvinreid.RWRCTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SelfCare.app/SelfCare";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RWRC.app/RWRC";
 			};
 			name = Release;
 		};
@@ -767,7 +761,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WC92Z884R6;
-				INFOPLIST_FILE = "$(SRCROOT)/SelfCare/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/RWRC/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -787,7 +781,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WC92Z884R6;
-				INFOPLIST_FILE = "$(SRCROOT)/SelfCare/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/RWRC/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -803,7 +797,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0CFA90552184C34400E09720 /* Build configuration list for PBXNativeTarget "SelfCareUITests" */ = {
+		0CFA90552184C34400E09720 /* Build configuration list for PBXNativeTarget "RWRCUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0CFA90532184C34400E09720 /* Debug */,
@@ -812,7 +806,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0CFA90612184C35200E09720 /* Build configuration list for PBXNativeTarget "SelfCareTests" */ = {
+		0CFA90612184C35200E09720 /* Build configuration list for PBXNativeTarget "RWRCTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0CFA90622184C35200E09720 /* Debug */,
@@ -821,7 +815,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		48AC74BE20A66C2A00AA1788 /* Build configuration list for PBXProject "SelfCare" */ = {
+		48AC74BE20A66C2A00AA1788 /* Build configuration list for PBXProject "RWRC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				48AC74D320A66C2C00AA1788 /* Debug */,
@@ -830,7 +824,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		48AC74D520A66C2C00AA1788 /* Build configuration list for PBXNativeTarget "SelfCare" */ = {
+		48AC74D520A66C2C00AA1788 /* Build configuration list for PBXNativeTarget "RWRC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				48AC74D620A66C2C00AA1788 /* Debug */,
