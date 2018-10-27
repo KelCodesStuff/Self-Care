@@ -2,13 +2,13 @@
 //  SelfCareUITests.swift
 //  SelfCareUITests
 //
-//  Created by Kelvin Reid on 10/25/18.
+//  Created by Kelvin Reid on 10/27/18.
 //  Copyright © 2018 Kelvin Reid. All rights reserved.
 //
 
 import XCTest
 
-class SelfCareUITests: XCTestCase {
+class SelfCareTestsUITests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

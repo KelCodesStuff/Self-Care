@@ -1,4 +1,3 @@
-source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, "11.0"
 use_frameworks!
 inhibit_all_warnings!
@@ -19,4 +18,12 @@ target 'RWRC' do
           end
       end
   end
+end
+
+target 'RWRCTests' do
+    # Pods for testing
+end
+
+target 'RWRCUITests' do
+    # Pods for testing
 end

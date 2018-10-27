@@ -2,8 +2,8 @@
 //  SelfCareTests.swift
 //  SelfCareTests
 //
-//  Created by Kelvin Reid on 10/25/18.
-//  Copyright © 2018 Kelvin Reid. All rights reserved.
+//  Created by Kelvin Reid on 10/27/18.
+//  Copyright © 2018 Razeware. All rights reserved.
 //
 
 import XCTest
