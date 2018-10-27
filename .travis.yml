@@ -5,5 +5,5 @@ before_install:
   - gem install cocoapods -v '0.32.1'
 
 script:
-    - xcodebuild clean test -workspace Suicide-Prevention.xcworkspace -scheme SelfCare -destination "platform=iOS Simulator,name=iPhone X,OS=12.0" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -quiet
+    - xcodebuild clean test -workspace SelfCare.xcworkspace -scheme SelfCare -destination "platform=iOS Simulator,name=iPhone X,OS=12.0" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -quiet
 after_success:
