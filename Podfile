@@ -20,10 +20,10 @@ target 'RWRC' do
   end
 end
 
-target 'RWRCTests' do
+target 'SelfCareTests' do
     # Pods for testing
 end
 
-target 'RWRCUITests' do
+target 'SelfCareUITests' do
     # Pods for testing
 end
