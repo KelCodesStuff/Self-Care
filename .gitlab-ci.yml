@@ -9,4 +9,4 @@ build_project:
   stage: build
   script:
     - xcodebuild clean -workspace RWRC.xcworkspace -scheme RWRC | xcpretty
-    - xcodebuild test -workspace RWRC.xcworkspace -scheme RWRC -destination 'platform=iOS Simulator,name=iPhone X,OS=12.0' | xcpretty -s 
+    - xcodebuild test -workspace RWRC.xcworkspace -scheme RWRC -destination "platform=iOS Simulator,name=iPhone X,OS=12.0" | xcpretty -s 
