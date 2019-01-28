@@ -9,4 +9,4 @@ build_project:
   stage: build
   script:
     - xcodebuild clean -workspace SelfCare.xcworkspace -scheme SelfCare | xcpretty
-    - xcodebuild test -workspace SelfCare.xcworkspace -scheme SelfCare -destination "platform=iOS Simulator,name=iPhone X,OS=12.0" | xcpretty -s 
+    - xcodebuild test -workspace SelfCare.xcworkspace -scheme SelfCare -destination "platform=iOS Simulator,name=iPhone XS Max,OS=12.0" | xcpretty -s 
