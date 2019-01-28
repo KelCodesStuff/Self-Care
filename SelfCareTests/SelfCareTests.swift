@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import Firebase
+
 @testable import SelfCare
 
 class SelfCareTests: XCTestCase {

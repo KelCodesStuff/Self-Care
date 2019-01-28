@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Firebase
 
 class SelfCareUITests: XCTestCase {
 
