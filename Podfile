@@ -5,7 +5,7 @@ target 'SelfCare' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for GameSpeak
+  # Pods for SelfCare
 
 pod 'Firebase/Core'
 pod 'Firebase/Database'
@@ -13,5 +13,19 @@ pod 'Firebase/Auth'
 pod 'Firebase/Storage'
 pod 'Fabric'
 pod 'Crashlytics'
+
+end
+
+target 'SelfCareTests' do
+    # Pods for testing
+
+pod 'Firebase/Core'
+
+end
+
+target 'SelfCareUITests' do
+    # Pods for testing
+
+pod 'Firebase/Core'
 
 end
