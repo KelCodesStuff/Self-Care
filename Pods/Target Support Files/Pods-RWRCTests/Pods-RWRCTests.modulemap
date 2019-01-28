@@ -1,6 +1,0 @@
-framework module Pods_RWRCTests {
-  umbrella header "Pods-RWRCTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
