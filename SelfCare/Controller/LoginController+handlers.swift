@@ -23,12 +23,13 @@ extension LoginController: UIImagePickerControllerDelegate, UINavigationControll
         Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
             
             if error != nil {
-                print(error!)
+                self.invalidRegistration()
                 return
             }
             
-            guard let uid = user?.user.uid else {
-                return
+            guard let uid = user?.user.uid
+                else {
+                    return
             }
             
             //successfully authenticated user
@@ -50,7 +51,8 @@ extension LoginController: UIImagePickerControllerDelegate, UINavigationControll
                             return
                         }
                         
-                        guard let url = url else { return }
+                        guard let url = url
+                            else { return }
                         let values = ["name": name, "email": email, "profileImageUrl": url.absoluteString]
                         
                         self.registerUserIntoDatabaseWithUID(uid, values: values as [String : AnyObject])
@@ -59,6 +61,12 @@ extension LoginController: UIImagePickerControllerDelegate, UINavigationControll
                 })
             }
         })
+    }
+    
+    func invalidRegistration() {
+        let alert = UIAlertController(title: "Alert!", message: "Registration is invalid", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     fileprivate func registerUserIntoDatabaseWithUID(_ uid: String, values: [String: AnyObject]) {

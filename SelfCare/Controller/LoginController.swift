@@ -47,15 +47,15 @@ class LoginController: UIViewController {
     }
     
     func handleLogin() {
-        guard let email = emailTextField.text, let password = passwordTextField.text else {
-            print("Form is not valid")
+        guard let email = emailTextField.text, let password = passwordTextField.text
+            else {
             return
         }
         
         Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
             
             if error != nil {
-                print(error ?? "")
+                self.invalidLogin()
                 return
             }
             
@@ -67,6 +67,12 @@ class LoginController: UIViewController {
             
         })
         
+    }
+    
+    func invalidLogin() {
+        let alert = UIAlertController(title: "Alert!", message: "Login is invalid", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     let nameTextField: UITextField = {
