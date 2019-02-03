@@ -1,9 +1,9 @@
 //
 //  UserCell.swift
-//  gameofchats
+//  SelfCare
 //
-//  Created by Brian Voong on 7/8/16.
-//  Copyright © 2016 letsbuildthatapp. All rights reserved.
+//  Created by Kelvin Reid on 1/27/19.
+//  Copyright © 2019 KReid. All rights reserved.
 //
 
 import UIKit
