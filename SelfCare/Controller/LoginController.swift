@@ -8,12 +8,8 @@
 
 import UIKit
 import Firebase
-import FirebaseAuth
-import FirebaseDatabase
 
 class LoginController: UIViewController {
-    
-    var messagesController: MessagesController?
     
     let inputsContainerView: UIView = {
         let view = UIView()
@@ -26,7 +22,7 @@ class LoginController: UIViewController {
     
     lazy var loginRegisterButton: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = UIColor(r: 0, g: 150, b: 255)
+        button.backgroundColor = UIColor(r: 80, g: 100, b: 160)
         button.setTitle("Register", for: UIControl.State())
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: UIControl.State())
@@ -60,13 +56,44 @@ class LoginController: UIViewController {
             }
             
             //successfully logged in our user
-            
-            self.messagesController?.fetchUserAndSetupNavBarTitle()
-            
             self.dismiss(animated: true, completion: nil)
             
         })
         
+    }
+    
+    func handleRegister() {
+        guard let email = emailTextField.text, let password = passwordTextField.text, let name = nameTextField.text else {
+            print("Form is not valid")
+            return
+        }
+        
+        Auth.auth().createUser(withEmail: email, password: password, completion: { (res, error) in
+            
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            guard let uid = res?.user.uid else {
+                return
+            }
+            
+            //successfully authenticated user
+            let ref = Database.database().reference()
+            let usersReference = ref.child("users").child(uid)
+            let values = ["name": name, "email": email]
+            usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
+                
+                if let err = err {
+                    print(err)
+                    return
+                }
+                
+                self.dismiss(animated: true, completion: nil)
+            })
+            
+        })
     }
     
     let nameTextField: UITextField = {
@@ -105,15 +132,11 @@ class LoginController: UIViewController {
         return tf
     }()
     
-    lazy var profileImageView: UIImageView = {
+    let profileImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "main_background")
+        imageView.image = UIImage(named: "main_background_0")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
-        
-        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectProfileImageView)))
-        imageView.isUserInteractionEnabled = true
-        
         return imageView
     }()
     
@@ -152,7 +175,7 @@ class LoginController: UIViewController {
         super.viewDidLoad()
         
         // screen background color
-        view.backgroundColor = UIColor(r: 0, g: 80, b: 255)
+        view.backgroundColor = UIColor(r: 0, g: 90, b: 160)
         
         view.addSubview(inputsContainerView)
         view.addSubview(loginRegisterButton)
