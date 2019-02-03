@@ -11,9 +11,10 @@ import Firebase
 
 class MenuController: UIViewController {
     
+    
     lazy var poemButton: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = UIColor(r: 80, g: 100, b: 160)
+        button.backgroundColor = UIColor(r: 0, g: 100, b: 255)
         button.setTitle("Poem", for: UIControl.State())
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: UIControl.State())
@@ -27,7 +28,7 @@ class MenuController: UIViewController {
     
     lazy var wineButton: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = UIColor(r: 80, g: 100, b: 160)
+        button.backgroundColor = UIColor(r: 0, g: 100, b: 255)
         button.setTitle("Wine Recomendations", for: UIControl.State())
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: UIControl.State())
@@ -41,7 +42,7 @@ class MenuController: UIViewController {
     
     lazy var recipeButton: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = UIColor(r: 80, g: 100, b: 160)
+        button.backgroundColor = UIColor(r: 0, g: 100, b: 255)
         button.setTitle("Recipes", for: UIControl.State())
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: UIControl.State())
@@ -53,23 +54,13 @@ class MenuController: UIViewController {
         return button
     }()
     
-    @objc func handlePoemButton() {
-        
-    }
-    
-    @objc func handleWineButton() {
-        
-    }
-    
-    @objc func handleRecipeButton() {
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // screen background color
-        view.backgroundColor = UIColor(r: 10, g: 50, b: 160)
+        view.backgroundColor = UIColor(r: 255, g: 255, b: 255)
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(handleBack))
         
         view.addSubview(poemButton)
         view.addSubview(wineButton)
@@ -78,6 +69,28 @@ class MenuController: UIViewController {
         setupPoemButton()
         setupWineButton()
         setupRecipeButton()
+    }
+    
+    @objc func handleBack() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func handlePoemButton() {
+        let newPoemController = PoemController()
+        let navController = UINavigationController(rootViewController: newPoemController)
+        present(navController, animated: true, completion: nil)
+    }
+    
+    @objc func handleWineButton() {
+        let newWineController = WineController()
+        let navController = UINavigationController(rootViewController: newWineController)
+        present(navController, animated: true, completion: nil)
+    }
+    
+    @objc func handleRecipeButton() {
+        let newRecipeController = RecipeController()
+        let navController = UINavigationController(rootViewController: newRecipeController)
+        present(navController, animated: true, completion: nil)
     }
     
     // Buttons
