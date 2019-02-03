@@ -11,7 +11,7 @@
 		0C083B1222065E91007ABBA9 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C083B1022065E91007ABBA9 /* UserCell.swift */; };
 		0C083B1322065E91007ABBA9 /* ChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C083B1122065E91007ABBA9 /* ChatMessageCell.swift */; };
 		0C083B1522065EF6007ABBA9 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C083B1422065EF6007ABBA9 /* Message.swift */; };
-		0C92728D220614940040FB0C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C92728C220614940040FB0C /* User.swift */; };
+		0C083B1722068DC8007ABBA9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C083B1622068DC8007ABBA9 /* User.swift */; };
 		0C92728F220627C40040FB0C /* LoginController+handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C92728E220627C40040FB0C /* LoginController+handlers.swift */; };
 		0C927292220637BC0040FB0C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C927291220637BC0040FB0C /* Extensions.swift */; };
 		0CAD976D21FE693600F9E318 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAD976C21FE693600F9E318 /* AppDelegate.swift */; };
@@ -55,7 +55,7 @@
 		0C083B1022065E91007ABBA9 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		0C083B1122065E91007ABBA9 /* ChatMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageCell.swift; sourceTree = "<group>"; };
 		0C083B1422065EF6007ABBA9 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		0C92728C220614940040FB0C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0C083B1622068DC8007ABBA9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0C92728E220627C40040FB0C /* LoginController+handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginController+handlers.swift"; sourceTree = "<group>"; };
 		0C927291220637BC0040FB0C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0CAD976921FE693600F9E318 /* SelfCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelfCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,7 +180,7 @@
 		0CAD979A21FE6ACD00F9E318 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0C92728C220614940040FB0C /* User.swift */,
+				0C083B1622068DC8007ABBA9 /* User.swift */,
 				0C083B1422065EF6007ABBA9 /* Message.swift */,
 			);
 			path = Model;
@@ -488,8 +488,8 @@
 				0C083B1322065E91007ABBA9 /* ChatMessageCell.swift in Sources */,
 				0CAD97A921FE837800F9E318 /* WineController.swift in Sources */,
 				0C92728F220627C40040FB0C /* LoginController+handlers.swift in Sources */,
+				0C083B1722068DC8007ABBA9 /* User.swift in Sources */,
 				0CAD976F21FE693600F9E318 /* MessagesController.swift in Sources */,
-				0C92728D220614940040FB0C /* User.swift in Sources */,
 				0CAD97AB21FE839200F9E318 /* RecipeController.swift in Sources */,
 				0CAD979F21FE6DE900F9E318 /* LoginController.swift in Sources */,
 				0C083B1522065EF6007ABBA9 /* Message.swift in Sources */,
