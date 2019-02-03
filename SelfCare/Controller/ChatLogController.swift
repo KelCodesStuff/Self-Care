@@ -1,9 +1,9 @@
 //
 //  ChatLogController.swift
-//  gameofchats
+//  SelfCare
 //
-//  Created by Brian Voong on 7/7/16.
-//  Copyright © 2016 letsbuildthatapp. All rights reserved.
+//  Created by Kelvin Reid on 1/27/19.
+//  Copyright © 2019 KReid. All rights reserved.
 //
 
 import UIKit
@@ -47,9 +47,9 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
                     self.collectionView?.reloadData()
                 })
                 
-                }, withCancel: nil)
-            
             }, withCancel: nil)
+            
+        }, withCancel: nil)
     }
     
     lazy var inputTextField: UITextField = {
@@ -66,16 +66,16 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
         super.viewDidLoad()
         
         collectionView?.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
-//        collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
+        //        collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
         collectionView?.alwaysBounceVertical = true
         collectionView?.backgroundColor = UIColor.white
         collectionView?.register(ChatMessageCell.self, forCellWithReuseIdentifier: cellId)
         
         collectionView?.keyboardDismissMode = .interactive
         
-//        setupInputComponents()
-//        
-//        setupKeyboardObservers()
+        //        setupInputComponents()
+        //
+        //        setupKeyboardObservers()
     }
     
     lazy var inputContainerView: UIView = {
@@ -141,9 +141,9 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
         let keyboardDuration = (notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as AnyObject).doubleValue
         
         containerViewBottomAnchor?.constant = -keyboardFrame!.height
-        UIView.animate(withDuration: keyboardDuration!, animations: { 
+        UIView.animate(withDuration: keyboardDuration!, animations: {
             self.view.layoutIfNeeded()
-        }) 
+        })
     }
     
     @objc func handleKeyboardWillHide(_ notification: Notification) {
@@ -152,7 +152,7 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
         containerViewBottomAnchor?.constant = 0
         UIView.animate(withDuration: keyboardDuration!, animations: {
             self.view.layoutIfNeeded()
-        }) 
+        })
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -278,7 +278,7 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
         let fromId = Auth.auth().currentUser!.uid
         let timestamp = Int(Date().timeIntervalSince1970)
         let values = ["text": inputTextField.text!, "toId": toId, "fromId": fromId, "timestamp": timestamp] as [String : Any]
-//        childRef.updateChildValues(values)
+        //        childRef.updateChildValues(values)
         
         childRef.updateChildValues(values) { (error, ref) in
             if error != nil {
@@ -319,11 +319,11 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
-	guard let input = input else { return nil }
-	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
+    guard let input = input else { return nil }
+    return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
 }
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
-	return input.rawValue
+    return input.rawValue
 }

@@ -15,7 +15,7 @@ class MenuController: UIViewController {
     
     lazy var poemButton: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = UIColor(r: 80, g: 100, b: 160)
+        button.backgroundColor = UIColor(r: 10, g: 50, b: 160)
         button.setTitle("Poem", for: UIControl.State())
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: UIControl.State())
@@ -29,7 +29,7 @@ class MenuController: UIViewController {
     
     lazy var wineButton: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = UIColor(r: 80, g: 100, b: 160)
+        button.backgroundColor = UIColor(r: 10, g: 50, b: 160)
         button.setTitle("Wine Recomendations", for: UIControl.State())
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: UIControl.State())
@@ -43,7 +43,7 @@ class MenuController: UIViewController {
     
     lazy var recipeButton: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = UIColor(r: 80, g: 100, b: 160)
+        button.backgroundColor = UIColor(r: 10, g: 50, b: 160)
         button.setTitle("Recipes", for: UIControl.State())
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: UIControl.State())
@@ -55,23 +55,13 @@ class MenuController: UIViewController {
         return button
     }()
     
-    @objc func handlePoemButton() {
-        
-    }
-    
-    @objc func handleWineButton() {
-        
-    }
-    
-    @objc func handleRecipeButton() {
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // screen background color
-        view.backgroundColor = UIColor(r: 10, g: 50, b: 160)
+        view.backgroundColor = UIColor(r: 255, g: 255, b: 255)
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(handleBack))
         
         view.addSubview(poemButton)
         view.addSubview(wineButton)
@@ -82,11 +72,33 @@ class MenuController: UIViewController {
         setupRecipeButton()
     }
     
+    @objc func handleBack() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func handlePoemButton() {
+        let newPoemController = PoemController()
+        let navController = UINavigationController(rootViewController: newPoemController)
+        present(navController, animated: true, completion: nil)
+    }
+    
+    @objc func handleWineButton() {
+        let newWineController = WineController()
+        let navController = UINavigationController(rootViewController: newWineController)
+        present(navController, animated: true, completion: nil)
+    }
+    
+    @objc func handleRecipeButton() {
+        let newRecipeController = RecipeController()
+        let navController = UINavigationController(rootViewController: newRecipeController)
+        present(navController, animated: true, completion: nil)
+    }
+    
     // Buttons
     func setupPoemButton() {
         //need x, y, width, height constraints
         poemButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        poemButton.topAnchor.constraint(equalTo: view.centerYAnchor, constant: -200).isActive = true
+        poemButton.topAnchor.constraint(equalTo: view.centerYAnchor, constant: -180).isActive = true
         poemButton.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -100).isActive = true
         poemButton.heightAnchor.constraint(equalToConstant: 80).isActive = true
     }
@@ -94,7 +106,7 @@ class MenuController: UIViewController {
     func setupWineButton() {
         //need x, y, width, height constraints
         wineButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        wineButton.topAnchor.constraint(equalTo: view.centerYAnchor, constant: -100).isActive = true
+        wineButton.topAnchor.constraint(equalTo: view.centerYAnchor, constant: -70).isActive = true
         wineButton.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -100).isActive = true
         wineButton.heightAnchor.constraint(equalToConstant: 80).isActive = true
     }
@@ -102,7 +114,7 @@ class MenuController: UIViewController {
     func setupRecipeButton() {
         //need x, y, width, height constraints
         recipeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        recipeButton.topAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
+        recipeButton.topAnchor.constraint(equalTo: view.centerYAnchor, constant: 40).isActive = true
         recipeButton.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -100).isActive = true
         recipeButton.heightAnchor.constraint(equalToConstant: 80).isActive = true
     }
