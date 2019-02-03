@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 
 extension LoginController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -35,7 +36,7 @@ extension LoginController: UIImagePickerControllerDelegate, UINavigationControll
             let storageRef = Storage.storage().reference().child("profile_images").child("\(imageName).jpg")
             
             if let profileImage = self.profileImageView.image, let uploadData = profileImage.jpegData(compressionQuality: 0.1) {
-            
+                
                 storageRef.putData(uploadData, metadata: nil, completion: { (_, err) in
                     
                     if let error = error {
@@ -71,8 +72,8 @@ extension LoginController: UIImagePickerControllerDelegate, UINavigationControll
                 return
             }
             
-//            self.messagesController?.fetchUserAndSetupNavBarTitle()
-//            self.messagesController?.navigationItem.title = values["name"] as? String
+            //            self.messagesController?.fetchUserAndSetupNavBarTitle()
+            //            self.messagesController?.navigationItem.title = values["name"] as? String
             let user = User(dictionary: values)
             self.messagesController?.setupNavBarWithUser(user)
             
@@ -90,9 +91,9 @@ extension LoginController: UIImagePickerControllerDelegate, UINavigationControll
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-// Local variable inserted by Swift 4.2 migrator.
-let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
-
+        // Local variable inserted by Swift 4.2 migrator.
+        let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+        
         
         var selectedImageFromPicker: UIImage?
         
@@ -120,5 +121,5 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
-	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+    return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
 }
