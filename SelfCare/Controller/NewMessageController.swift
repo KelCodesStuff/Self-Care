@@ -22,8 +22,6 @@ class NewMessageController: UITableViewController {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(handleCancel))
         
-         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(handleMenu))
-        
         tableView.register(UserCell.self, forCellReuseIdentifier: cellId)
         
         fetchUser()
@@ -50,12 +48,6 @@ class NewMessageController: UITableViewController {
     
     @objc func handleCancel() {
         dismiss(animated: true, completion: nil)
-    }
-    
-    @objc func handleMenu() {
-        let newMenuController = MenuController()
-        let navController = UINavigationController(rootViewController: newMenuController)
-        present(navController, animated: true, completion: nil)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
