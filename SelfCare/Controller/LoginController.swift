@@ -17,7 +17,7 @@ class LoginController: UIViewController {
     
     let inputsContainerView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor(r: 255, g: 255, b: 255)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 5
         view.layer.masksToBounds = true
@@ -26,7 +26,7 @@ class LoginController: UIViewController {
     
     lazy var loginRegisterButton: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = UIColor(r: 80, g: 100, b: 160)
+        button.backgroundColor = UIColor(r: 0, g: 100, b: 200)
         button.setTitle("Register", for: UIControl.State())
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: UIControl.State())
@@ -49,7 +49,8 @@ class LoginController: UIViewController {
     func handleLogin() {
         guard let email = emailTextField.text, let password = passwordTextField.text
             else {
-            return
+                print("Form is not valid")
+                return
         }
         
         Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
@@ -78,6 +79,7 @@ class LoginController: UIViewController {
     let nameTextField: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Name"
+        tf.textColor = UIColor(r: 255, g: 255, b: 255)
         tf.translatesAutoresizingMaskIntoConstraints = false
         return tf
     }()
@@ -111,18 +113,24 @@ class LoginController: UIViewController {
         return tf
     }()
     
-    let profileImageView: UIImageView = {
+    lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "main_background_0")
+        imageView.image = UIImage(named: "default_image")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
+        imageView.layer.cornerRadius = 10
+        imageView.clipsToBounds = true
+        
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectProfileImageView)))
+        imageView.isUserInteractionEnabled = true
+        
         return imageView
     }()
     
     lazy var loginRegisterSegmentedControl: UISegmentedControl = {
         let sc = UISegmentedControl(items: ["Login", "Register"])
         sc.translatesAutoresizingMaskIntoConstraints = false
-        sc.tintColor = UIColor.white
+        sc.tintColor = UIColor(r: 255, g: 255, b: 255)
         sc.selectedSegmentIndex = 1
         sc.addTarget(self, action: #selector(handleLoginRegisterChange), for: .valueChanged)
         return sc
@@ -154,7 +162,7 @@ class LoginController: UIViewController {
         super.viewDidLoad()
         
         // screen background color
-        view.backgroundColor = UIColor(r: 0, g: 90, b: 160)
+        view.backgroundColor = UIColor(r: 0, g: 85, b: 146)
         
         view.addSubview(inputsContainerView)
         view.addSubview(loginRegisterButton)
@@ -179,7 +187,7 @@ class LoginController: UIViewController {
         //need x, y, width, height constraints
         profileImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         profileImageView.bottomAnchor.constraint(equalTo: loginRegisterSegmentedControl.topAnchor, constant: -12).isActive = true
-        profileImageView.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        profileImageView.widthAnchor.constraint(equalToConstant: 250).isActive = true
         profileImageView.heightAnchor.constraint(equalToConstant: 150).isActive = true
     }
     
@@ -261,10 +269,3 @@ extension UIColor {
     }
     
 }
-
-
-
-
-
-
-
