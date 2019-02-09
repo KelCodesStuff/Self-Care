@@ -52,6 +52,13 @@ class MessagesController: UITableViewController {
         tableView.register(UserCell.self, forCellReuseIdentifier: cellId)
         
         //        observeMessages()
+        
+        self.navigationController?.isToolbarHidden = false
+        var items = [UIBarButtonItem]()
+        items.append( UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(handleMenu)))
+        items.append( UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil) )
+        self.toolbarItems = items
+        
     }
     
     var messages = [Message]()
@@ -158,6 +165,12 @@ class MessagesController: UITableViewController {
         let newMessageController = NewMessageController()
         newMessageController.messagesController = self
         let navController = UINavigationController(rootViewController: newMessageController)
+        present(navController, animated: true, completion: nil)
+    }
+    
+    @objc func handleMenu() {
+        let newMenuController = MenuController()
+        let navController = UINavigationController(rootViewController: newMenuController)
         present(navController, animated: true, completion: nil)
     }
     
