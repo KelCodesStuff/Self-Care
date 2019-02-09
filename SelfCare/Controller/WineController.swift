@@ -41,7 +41,7 @@ class WineController: UIViewController {
         //need x, y, width, height constraints
         wineImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         wineImageView.topAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        wineImageView.widthAnchor.constraint(equalToConstant: 402).isActive = true
+        wineImageView.widthAnchor.constraint(equalToConstant: 400).isActive = true
         wineImageView.heightAnchor.constraint(equalToConstant: -100).isActive = true
     }
 

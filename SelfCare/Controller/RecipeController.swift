@@ -15,7 +15,7 @@ class RecipeController: UIViewController {
         super.viewDidLoad()
         
         // screen background color
-        view.backgroundColor = UIColor(r: 242, g: 233, b: 219)
+        view.backgroundColor = UIColor(r: 254, g: 254, b: 254)
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(handleBack))
         
@@ -31,7 +31,7 @@ class RecipeController: UIViewController {
     
     let recipeImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "recipe_background")
+        imageView.image = UIImage(named: "recipe_background-1")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         return imageView
@@ -41,7 +41,7 @@ class RecipeController: UIViewController {
         //need x, y, width, height constraints
         recipeImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         recipeImageView.topAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        recipeImageView.widthAnchor.constraint(equalToConstant: 402).isActive = true
+        recipeImageView.widthAnchor.constraint(equalToConstant: 450).isActive = true
         recipeImageView.heightAnchor.constraint(equalToConstant: -100).isActive = true
     }
 
