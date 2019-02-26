@@ -35,12 +35,71 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
     }
 }
 
-class MessagesController: UITableViewController {
+class MessagesController: UIViewController {
     
-    let cellId = "cellId"
+    lazy var poemButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = UIColor(r: 0, g: 100, b: 200)
+        button.setTitle("Poem", for: UIControl.State())
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitleColor(UIColor.white, for: UIControl.State())
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.layer.cornerRadius = 5
+        
+        button.addTarget(self, action: #selector(handlePoemButton), for: .touchUpInside)
+        
+        return button
+    }()
+    
+    lazy var wineButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = UIColor(r: 0, g: 100, b: 200)
+        button.setTitle("Wine Recomendations", for: UIControl.State())
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitleColor(UIColor.white, for: UIControl.State())
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.layer.cornerRadius = 5
+        
+        button.addTarget(self, action: #selector(handleWineButton), for: .touchUpInside)
+        
+        return button
+    }()
+    
+    lazy var recipeButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = UIColor(r: 0, g: 100, b: 200)
+        button.setTitle("Recipes", for: UIControl.State())
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitleColor(UIColor.white, for: UIControl.State())
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.layer.cornerRadius = 5
+        
+        button.addTarget(self, action: #selector(handleRecipeButton), for: .touchUpInside)
+        
+        return button
+    }()
+    
+    lazy var workoutButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = UIColor(r: 0, g: 100, b: 200)
+        button.setTitle("Workout", for: UIControl.State())
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitleColor(UIColor.white, for: UIControl.State())
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.layer.cornerRadius = 5
+        
+        button.addTarget(self, action: #selector(handleWorkoutButton), for: .touchUpInside)
+        
+        return button
+    }()
+    
+ //   let cellId = "cellId"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // screen background color
+        view.backgroundColor = UIColor(r: 255, g: 255, b: 255)
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
         
@@ -49,116 +108,32 @@ class MessagesController: UITableViewController {
         
         checkIfUserIsLoggedIn()
         
-        tableView.register(UserCell.self, forCellReuseIdentifier: cellId)
+//        tableView.register(UserCell.self, forCellReuseIdentifier: cellId)
         
         //        observeMessages()
         
+/*
         self.navigationController?.isToolbarHidden = false
         var items = [UIBarButtonItem]()
         items.append( UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(handleMenu)))
         items.append( UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil) )
         self.toolbarItems = items
+*/
         
-    }
-    
-    var messages = [Message]()
-    var messagesDictionary = [String: Message]()
-    
-    func observeUserMessages() {
-        guard let uid = Auth.auth().currentUser?.uid else {
-            return
-        }
+        view.addSubview(menuImageView)
         
-        let ref = Database.database().reference().child("user-messages").child(uid)
-        ref.observe(.childAdded, with: { (snapshot) in
-            
-            let userId = snapshot.key
-            
-            print(uid, userId)
-            Database.database().reference().child("user-messages").child(uid).child(userId).observe(.childAdded, with: { (snapshot) in
-                
-                let messageId = snapshot.key
-                self.fetchMessageWithMessageId(messageId)
-                
-            }, withCancel: nil)
-            
-        }, withCancel: nil)
-    }
-    
-    fileprivate func fetchMessageWithMessageId(_ messageId: String) {
-        let messagesReference = Database.database().reference().child("messages").child(messageId)
+        setupMenuImageView()
         
-        messagesReference.observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            if let dictionary = snapshot.value as? [String: AnyObject] {
-                let message = Message(dictionary: dictionary)
-                
-                if let chatPartnerId = message.chatPartnerId() {
-                    self.messagesDictionary[chatPartnerId] = message
-                }
-                
-                self.attemptReloadOfTable()
-            }
-            
-        }, withCancel: nil)
-    }
-    
-    fileprivate func attemptReloadOfTable() {
-        self.timer?.invalidate()
+        view.addSubview(poemButton)
+        view.addSubview(wineButton)
+        view.addSubview(recipeButton)
+        view.addSubview(workoutButton)
         
-        self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.handleReloadTable), userInfo: nil, repeats: false)
-    }
-    
-    var timer: Timer?
-    
-    @objc func handleReloadTable() {
-        self.messages = Array(self.messagesDictionary.values)
-        self.messages.sort(by: { (message1, message2) -> Bool in
-            
-            return message1.timestamp?.int32Value > message2.timestamp?.int32Value
-        })
+        setupPoemButton()
+        setupWineButton()
+        setupRecipeButton()
+        setupWorkoutButton()
         
-        //this will crash because of background thread, so lets call this on dispatch_async main thread
-        DispatchQueue.main.async(execute: {
-            self.tableView.reloadData()
-        })
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messages.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! UserCell
-        
-        let message = messages[indexPath.row]
-        cell.message = message
-        
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 72
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let message = messages[indexPath.row]
-        
-        guard let chatPartnerId = message.chatPartnerId() else {
-            return
-        }
-        
-        let ref = Database.database().reference().child("users").child(chatPartnerId)
-        ref.observeSingleEvent(of: .value, with: { (snapshot) in
-            guard let dictionary = snapshot.value as? [String: AnyObject] else {
-                return
-            }
-            
-            let user = User(dictionary: dictionary)
-            user.id = chatPartnerId
-            self.showChatControllerForUser(user)
-            
-        }, withCancel: nil)
     }
     
     @objc func handleNewMessage() {
@@ -201,11 +176,6 @@ class MessagesController: UITableViewController {
     }
     
     func setupNavBarWithUser(_ user: User) {
-        messages.removeAll()
-        messagesDictionary.removeAll()
-        tableView.reloadData()
-        
-        observeUserMessages()
         
         let titleView = UIView()
         titleView.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
@@ -270,6 +240,86 @@ class MessagesController: UITableViewController {
         loginController.messagesController = self
         present(loginController, animated: true, completion: nil)
     }
+    
+    @objc func handlePoemButton() {
+        let newPoemController = PoemController()
+        let navController = UINavigationController(rootViewController: newPoemController)
+        present(navController, animated: true, completion: nil)
+    }
+    
+    @objc func handleWineButton() {
+        let newWineController = WineController()
+        let navController = UINavigationController(rootViewController: newWineController)
+        present(navController, animated: true, completion: nil)
+    }
+    
+    @objc func handleRecipeButton() {
+        let newRecipeController = RecipeController()
+        let navController = UINavigationController(rootViewController: newRecipeController)
+        present(navController, animated: true, completion: nil)
+    }
+    
+    @objc func handleWorkoutButton() {
+        let newWorkoutController = WorkoutController()
+        let navController = UINavigationController(rootViewController: newWorkoutController)
+        present(navController, animated: true, completion: nil)
+    }
+    
+    // Buttons
+    func setupPoemButton() {
+        //need x, y, width, height constraints
+        poemButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        poemButton.topAnchor.constraint(equalTo: view.centerYAnchor, constant: -90).isActive = true
+        poemButton.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -200).isActive = true
+        poemButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
+    }
+    
+    func setupWineButton() {
+        //need x, y, width, height constraints
+        wineButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        wineButton.topAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
+        wineButton.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -200).isActive = true
+        wineButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
+    }
+    
+    func setupRecipeButton() {
+        //need x, y, width, height constraints
+        recipeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        recipeButton.topAnchor.constraint(equalTo: view.centerYAnchor, constant: 90).isActive = true
+        recipeButton.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -200).isActive = true
+        recipeButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
+    }
+    
+    func setupWorkoutButton() {
+        //need x, y, width, height constraints
+        workoutButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        workoutButton.topAnchor.constraint(equalTo: view.centerYAnchor, constant: 180).isActive = true
+        workoutButton.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -200).isActive = true
+        workoutButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
+    }
+    
+    let menuImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "menu_background")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+    
+    // Background image
+    func setupMenuImageView() {
+        //need x, y, width, height constraints
+        menuImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        menuImageView.topAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        menuImageView.widthAnchor.constraint(equalToConstant: 415).isActive = true
+        menuImageView.heightAnchor.constraint(equalToConstant: -90).isActive = true
+    }
+    
+    
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
+    }
+    
     
 }
 
