@@ -136,6 +136,16 @@ class LoginController: UIViewController {
         return sc
     }()
     
+    let messageText: UILabel = {
+        let tf = UILabel()
+        tf.text = "If you are considering suicide please know that you are not alone and there is someone who can help you. Please reach out to the Suicide Prevention Hotline at 1-800-273-8255."
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.numberOfLines = 4
+        tf.textAlignment = .center
+        tf.textColor = UIColor(r: 255, g: 255, b: 255)
+        return tf
+    }()
+    
     @objc func handleLoginRegisterChange() {
         let title = loginRegisterSegmentedControl.titleForSegment(at: loginRegisterSegmentedControl.selectedSegmentIndex)
         loginRegisterButton.setTitle(title, for: UIControl.State())
@@ -168,11 +178,13 @@ class LoginController: UIViewController {
         view.addSubview(loginRegisterButton)
         view.addSubview(profileImageView)
         view.addSubview(loginRegisterSegmentedControl)
+        view.addSubview(messageText)
         
         setupInputsContainerView()
         setupLoginRegisterButton()
         setupProfileImageView()
         setupLoginRegisterSegmentedControl()
+        setupMessageText()
     }
     
     func setupLoginRegisterSegmentedControl() {
@@ -255,6 +267,14 @@ class LoginController: UIViewController {
         loginRegisterButton.topAnchor.constraint(equalTo: inputsContainerView.bottomAnchor, constant: 12).isActive = true
         loginRegisterButton.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
         loginRegisterButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    }
+    
+    func setupMessageText() {
+        //need x, y, width, height constraints
+        messageText.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        messageText.topAnchor.constraint(equalTo: view.centerYAnchor, constant: 180).isActive = true
+        messageText.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -40).isActive = true
+        messageText.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
     
     override var preferredStatusBarStyle : UIStatusBarStyle {
