@@ -17,17 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selfCare_logo" translatesAutoresizingMaskIntoConstraints="NO" id="sbG-wa-L8I">
-                                <rect key="frame" x="87" y="310" width="240" height="232"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selfcare_logo" translatesAutoresizingMaskIntoConstraints="NO" id="MoD-mj-7oZ">
+                                <rect key="frame" x="106" y="348" width="202" height="200"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.7097010612487793" green="0.70970231294631958" blue="0.7178804874420166" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" red="0.25490196078431371" green="0.41176470588235292" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.92549019607843142" green="0.94901960784313721" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="sbG-wa-L8I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="0ek-jb-1UE"/>
-                            <constraint firstItem="sbG-wa-L8I" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="FkH-qK-pwc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sbG-wa-L8I" secondAttribute="bottom" constant="320" id="gB5-Ii-IQE"/>
-                            <constraint firstItem="sbG-wa-L8I" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="266" id="rF4-dg-6hf"/>
+                            <constraint firstItem="MoD-mj-7oZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="304" id="E1c-qO-acZ"/>
+                            <constraint firstItem="MoD-mj-7oZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="106" id="MC4-GG-iob"/>
+                            <constraint firstItem="MoD-mj-7oZ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Sof-dR-hwo"/>
+                            <constraint firstItem="MoD-mj-7oZ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="kR7-UH-JYQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="selfCare_logo" width="150" height="150"/>
+        <image name="selfcare_logo" width="734" height="764"/>
     </resources>
 </document>
