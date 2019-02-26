@@ -79,7 +79,6 @@ class LoginController: UIViewController {
     let nameTextField: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Name"
-        tf.textColor = UIColor(r: 255, g: 255, b: 255)
         tf.translatesAutoresizingMaskIntoConstraints = false
         return tf
     }()
