@@ -29,6 +29,8 @@ DerivedData/
 *.xcscmblueprint
 *.xcuserstate
 
+.DS_Store
+
 xcuserdata/
 
 Carthage/Build
