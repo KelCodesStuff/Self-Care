@@ -56,3 +56,4 @@ fastlane/test_output
 .Spotlight-V100
 *.swp
 *.lock
+.DS_Store
