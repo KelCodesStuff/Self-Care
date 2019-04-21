@@ -37,6 +37,20 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 
 class MessagesController: UIViewController {
     
+    lazy var chatButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = UIColor(r: 0, g: 100, b: 200)
+        button.setTitle("Chat", for: UIControl.State())
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitleColor(UIColor.white, for: UIControl.State())
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.layer.cornerRadius = 5
+        
+        button.addTarget(self, action: #selector(handleChatButton), for: .touchUpInside)
+        
+        return button
+    }()
+    
     lazy var poemButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = UIColor(r: 0, g: 100, b: 200)
@@ -102,10 +116,10 @@ class MessagesController: UIViewController {
         view.backgroundColor = UIColor(r: 255, g: 255, b: 255)
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
-        
+/*
         let image = UIImage(named: "new_message_icon")
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(handleNewMessage))
-        
+*/
         checkIfUserIsLoggedIn()
         
 //        tableView.register(UserCell.self, forCellReuseIdentifier: cellId)
@@ -124,29 +138,18 @@ class MessagesController: UIViewController {
         
         setupMenuImageView()
         
+        view.addSubview(chatButton)
         view.addSubview(poemButton)
         view.addSubview(wineButton)
         view.addSubview(recipeButton)
         view.addSubview(workoutButton)
         
+        setupChatButton()
         setupPoemButton()
         setupWineButton()
         setupRecipeButton()
         setupWorkoutButton()
         
-    }
-    
-    @objc func handleNewMessage() {
-        let newMessageController = NewMessageController()
-        newMessageController.messagesController = self
-        let navController = UINavigationController(rootViewController: newMessageController)
-        present(navController, animated: true, completion: nil)
-    }
-    
-    @objc func handleMenu() {
-        let newMenuController = MenuController()
-        let navController = UINavigationController(rootViewController: newMenuController)
-        present(navController, animated: true, completion: nil)
     }
     
     func checkIfUserIsLoggedIn() {
@@ -229,7 +232,6 @@ class MessagesController: UIViewController {
     }
     
     @objc func handleLogout() {
-        
         do {
             try Auth.auth().signOut()
         } catch let logoutError {
@@ -239,6 +241,20 @@ class MessagesController: UIViewController {
         let loginController = LoginController()
         loginController.messagesController = self
         present(loginController, animated: true, completion: nil)
+    }
+    
+    @objc func handleNewMessage() {
+        let newMessageController = NewMessageController()
+        newMessageController.messagesController = self
+        let navController = UINavigationController(rootViewController: newMessageController)
+        present(navController, animated: true, completion: nil)
+    }
+    
+    @objc func handleChatButton() {
+        let newMessageController = NewMessageController()
+        newMessageController.messagesController = self
+        let navController = UINavigationController(rootViewController: newMessageController)
+        present(navController, animated: true, completion: nil)
     }
     
     @objc func handlePoemButton() {
@@ -266,6 +282,14 @@ class MessagesController: UIViewController {
     }
     
     // Buttons
+    func setupChatButton() {
+        //need x, y, width, height constraints
+        chatButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        chatButton.topAnchor.constraint(equalTo: view.centerYAnchor, constant: -180).isActive = true
+        chatButton.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -200).isActive = true
+        chatButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
+    }
+    
     func setupPoemButton() {
         //need x, y, width, height constraints
         poemButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
