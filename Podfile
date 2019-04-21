@@ -13,6 +13,7 @@ pod 'Firebase/Auth'
 pod 'Firebase/Storage'
 pod 'Fabric'
 pod 'Crashlytics'
+pod 'PushNotifications'
 
 end
 

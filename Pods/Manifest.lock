@@ -75,6 +75,7 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - PushNotifications (1.1.0)
 
 DEPENDENCIES:
   - Crashlytics
@@ -83,6 +84,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
+  - PushNotifications
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -101,6 +103,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
+    - PushNotifications
 
 SPEC CHECKSUMS:
   Crashlytics: 1448070c1d2731ab71ea7c3faf84ac0f69657287
@@ -118,7 +121,8 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  PushNotifications: 8eee2fb66f3870025fe037883c88f5861f315bd0
 
-PODFILE CHECKSUM: 929036e8cf280905d0cfec92ecc5c2dc15c10636
+PODFILE CHECKSUM: 2a3ca4e265a45b5a95c40a9a4a72ae2a5818992b
 
 COCOAPODS: 1.5.3
