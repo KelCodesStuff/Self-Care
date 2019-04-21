@@ -12,6 +12,7 @@
 		0C083B1322065E91007ABBA9 /* ChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C083B1122065E91007ABBA9 /* ChatMessageCell.swift */; };
 		0C083B1522065EF6007ABBA9 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C083B1422065EF6007ABBA9 /* Message.swift */; };
 		0C083B1722068DC8007ABBA9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C083B1622068DC8007ABBA9 /* User.swift */; };
+		0C7D4DAC22656D5700F5A1E1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7D4DAB22656D5700F5A1E1 /* StoreKit.framework */; };
 		0C92728F220627C40040FB0C /* LoginController+handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C92728E220627C40040FB0C /* LoginController+handlers.swift */; };
 		0C927292220637BC0040FB0C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C927291220637BC0040FB0C /* Extensions.swift */; };
 		0C93DB86220F55EA00A4B2C2 /* WorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C93DB85220F55EA00A4B2C2 /* WorkoutController.swift */; };
@@ -51,12 +52,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0C4DEBE4226C00E9005D2DB3 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0C083B0E22065E7E007ABBA9 /* ChatLogController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
 		0C083B1022065E91007ABBA9 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		0C083B1122065E91007ABBA9 /* ChatMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageCell.swift; sourceTree = "<group>"; };
 		0C083B1422065EF6007ABBA9 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		0C083B1622068DC8007ABBA9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0C7D4DAA22656D3000F5A1E1 /* SelfCare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SelfCare.entitlements; sourceTree = "<group>"; };
+		0C7D4DAB22656D5700F5A1E1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		0C92728E220627C40040FB0C /* LoginController+handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginController+handlers.swift"; sourceTree = "<group>"; };
 		0C927291220637BC0040FB0C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0C93DB85220F55EA00A4B2C2 /* WorkoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutController.swift; sourceTree = "<group>"; };
@@ -97,6 +113,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF4CECA3EB9B7025C0FF9127 /* Pods_SelfCare.framework in Frameworks */,
+				0C7D4DAC22656D5700F5A1E1 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +169,7 @@
 		0CAD976B21FE693600F9E318 /* SelfCare */ = {
 			isa = PBXGroup;
 			children = (
+				0C7D4DAA22656D3000F5A1E1 /* SelfCare.entitlements */,
 				0CAD979A21FE6ACD00F9E318 /* Model */,
 				0CAD979B21FE6ADB00F9E318 /* View */,
 				0CAD979C21FE6AE400F9E318 /* Controller */,
@@ -243,6 +261,7 @@
 		862A2293EA43B98709159C15 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0C7D4DAB22656D5700F5A1E1 /* StoreKit.framework */,
 				297EB9A328EDF1763A52B329 /* Pods_SelfCare.framework */,
 				CFD93D67BAB3F6A1E4AA22DD /* libPods-SelfCareTests.a */,
 				88616D344946D41D7E1F0797 /* libPods-SelfCareUITests.a */,
@@ -262,6 +281,8 @@
 				0CAD976621FE693600F9E318 /* Frameworks */,
 				0CAD976721FE693600F9E318 /* Resources */,
 				3A2BB78CD6F38DC49416962E /* [CP] Embed Pods Frameworks */,
+				0C4DEBD4226BAE77005D2DB3 /* ShellScript */,
+				0C4DEBE4226C00E9005D2DB3 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -316,12 +337,26 @@
 		0CAD976121FE693600F9E318 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = KReid;
 				TargetAttributes = {
 					0CAD976821FE693600F9E318 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.HotspotConfiguration = {
+								enabled = 0;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 					0CAD977C21FE693C00F9E318 = {
 						CreatedOnToolsVersion = 10.1;
@@ -382,6 +417,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0C4DEBD4226BAE77005D2DB3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
+		};
 		3613A317EBB6FB549E4A7CA6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -415,6 +468,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-SelfCare/Pods-SelfCare-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities-framework/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PushNotifications/PushNotifications.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb-framework/nanopb.framework",
 			);
@@ -424,6 +478,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PushNotifications.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -588,8 +643,10 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = WC92Z884R6;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -606,7 +663,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -649,8 +706,10 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = WC92Z884R6;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -661,7 +720,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -676,7 +735,10 @@
 			baseConfigurationReference = 4316385182AF0987FDC3EF22 /* Pods-SelfCare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = SelfCare/SelfCare.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kelvin Reid (45HDSVC2BG)";
+				CODE_SIGN_STYLE = Manual;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = WC92Z884R6;
 				INFOPLIST_FILE = "$(SRCROOT)/SelfCare/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -686,6 +748,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kelreid.SelfCare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = SelfCareDevelopmentProfile;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -696,7 +759,9 @@
 			baseConfigurationReference = 7EE742B7B89FDE88D4FC7614 /* Pods-SelfCare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = SelfCare/SelfCare.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kelvin Reid (45HDSVC2BG)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = WC92Z884R6;
 				INFOPLIST_FILE = "$(SRCROOT)/SelfCare/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -706,6 +771,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kelreid.SelfCare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = SelfCareDevelopmentProfile;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
