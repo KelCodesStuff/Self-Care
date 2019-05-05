@@ -1,7 +1,20 @@
-osx_image: xcode10.2
+osx_image: xcode 10.2
 language: swift
-os: osx
+osx_image: xcode10
 
-xcode_project: SelfCare.xcworkspace
-xcode_scheme: SelfCare
-xcode_destination: platform=iOS Simulator, OS=12.0, name=iPhone Xs Max
+before_install:
+  - gem install cocoapods -v '0.32.1'
+
+script:
+    - xcodebuild clean test 
+    -workspace SelfCare.xcworkspace 
+    -scheme SelfCare 
+    -destination "platform=iOS Simulator,name=iPhone Xs Max,OS=12.0"
+
+after_success:
+
+# safelist
+branches:
+  only:
+  - master
+  - Development
