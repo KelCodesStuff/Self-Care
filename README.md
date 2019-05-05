@@ -1,7 +1,8 @@
 # SelfCare
 
-[![pipeline status](https://gitlab.com/KelCodesStuff/Self-Care/badges/master/pipeline.svg)](https://gitlab.com/KelCodesStuff/Self-Care/commits/master)
-[![coverage report](https://gitlab.com/KelCodesStuff/Self-Care/badges/master/coverage.svg)](https://gitlab.com/KelCodesStuff/Self-Care/commits/master)
+[![Build Status](https://travis-ci.com/KelCodesStuff/Self-Care.svg?branch=master)](https://travis-ci.com/KelCodesStuff/Self-Care)
+
+SelfCare! is an app for anyone who needs someone to talk to.
 
 ### Current Status and Project Goals
 
