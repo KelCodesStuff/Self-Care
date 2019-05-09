@@ -187,6 +187,11 @@ class LoginController: UIViewController {
         setupMessageText()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
+    
     func setupLoginRegisterSegmentedControl() {
         //need x, y, width, height constraints
         loginRegisterSegmentedControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
