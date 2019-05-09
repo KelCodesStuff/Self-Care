@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import Crashlytics
 
 class LoginController: UIViewController {
     
@@ -137,7 +138,7 @@ class LoginController: UIViewController {
     
     let messageText: UILabel = {
         let tf = UILabel()
-        tf.text = "If you are considering suicide please know that you are not alone and there is someone who can help you. Please reach out to the Suicide Prevention Hotline at 1-800-273-8255."
+        tf.text = "If you are considering suicide please reach out to the Suicide Prevention Hotline at 1-800-273-8255."
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.numberOfLines = 4
         tf.textAlignment = .center
