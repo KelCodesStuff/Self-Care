@@ -6,27 +6,24 @@ target 'SelfCare' do
   use_frameworks!
 
   # Pods for SelfCare
-
-pod 'Firebase/Core'
-pod 'Firebase/Database'
-pod 'Firebase/Auth'
-pod 'Firebase/Storage'
-pod 'Fabric'
-pod 'Crashlytics'
-pod 'PushNotifications'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
+  pod 'Fabric'
+  pod 'Crashlytics'
+  pod 'PushNotifications'
 
 end
 
 target 'SelfCareTests' do
-    # Pods for testing
-
-pod 'Firebase/Core'
+  # Pods for testing
+  pod 'Firebase/Core'
 
 end
 
 target 'SelfCareUITests' do
-    # Pods for testing
-
-pod 'Firebase/Core'
+  # Pods for testing
+  pod 'Firebase/Core'
 
 end
