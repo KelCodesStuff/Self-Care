@@ -15,6 +15,7 @@ import FirebaseStorage
 extension LoginController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func handleRegister() {
+        self.showSpinner(onView: self.view)
         guard let email = emailTextField.text, let password = passwordTextField.text, let name = nameTextField.text else {
             print("Form is not valid")
             return
@@ -56,6 +57,7 @@ extension LoginController: UIImagePickerControllerDelegate, UINavigationControll
                         let values = ["name": name, "email": email, "profileImageUrl": url.absoluteString]
                         
                         self.registerUserIntoDatabaseWithUID(uid, values: values as [String : AnyObject])
+                        self.removeSpinner()
                     })
                     
                 })
@@ -64,6 +66,7 @@ extension LoginController: UIImagePickerControllerDelegate, UINavigationControll
     }
     
     func invalidRegistration() {
+        self.removeSpinner()
         let alert = UIAlertController(title: "Alert!", message: "Registration is invalid", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
