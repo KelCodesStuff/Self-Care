@@ -335,7 +335,7 @@ class MessagesController: UIViewController {
         //need x, y, width, height constraints
         menuImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         menuImageView.topAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        menuImageView.widthAnchor.constraint(equalToConstant: 415).isActive = true
+        menuImageView.widthAnchor.constraint(equalToConstant: 900).isActive = true
         menuImageView.heightAnchor.constraint(equalToConstant: -90).isActive = true
     }
     
