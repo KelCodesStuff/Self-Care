@@ -15,7 +15,7 @@ class PoemController: UIViewController {
         super.viewDidLoad()
         
         // screen background color
-        view.backgroundColor = UIColor(r: 67, g: 141, b: 231)
+        view.backgroundColor = UIColor(r: 255, g: 255, b: 255)
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(handleBack))
         
@@ -24,7 +24,7 @@ class PoemController: UIViewController {
         setupPoemImageView()
 
     }
-     
+    
     @objc func handleBack() {
         dismiss(animated: true, completion: nil)
     }
@@ -41,7 +41,7 @@ class PoemController: UIViewController {
         //need x, y, width, height constraints
         poemImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         poemImageView.topAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        poemImageView.widthAnchor.constraint(equalToConstant: 415).isActive = true
+        poemImageView.widthAnchor.constraint(equalToConstant: 400).isActive = true
         poemImageView.heightAnchor.constraint(equalToConstant: -90).isActive = true
     }
 
