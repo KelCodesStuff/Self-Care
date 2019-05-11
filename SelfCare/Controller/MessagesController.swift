@@ -43,7 +43,7 @@ class MessagesController: UIViewController {
         button.setTitle("Chat", for: UIControl.State())
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: UIControl.State())
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
         button.layer.cornerRadius = 5
         
         button.addTarget(self, action: #selector(handleChatButton), for: .touchUpInside)
@@ -57,7 +57,7 @@ class MessagesController: UIViewController {
         button.setTitle("Poem", for: UIControl.State())
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: UIControl.State())
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
         button.layer.cornerRadius = 5
         
         button.addTarget(self, action: #selector(handlePoemButton), for: .touchUpInside)
@@ -71,7 +71,7 @@ class MessagesController: UIViewController {
         button.setTitle("Wine Recomendations", for: UIControl.State())
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: UIControl.State())
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
         button.layer.cornerRadius = 5
         
         button.addTarget(self, action: #selector(handleWineButton), for: .touchUpInside)
@@ -85,7 +85,7 @@ class MessagesController: UIViewController {
         button.setTitle("Recipes", for: UIControl.State())
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: UIControl.State())
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
         button.layer.cornerRadius = 5
         
         button.addTarget(self, action: #selector(handleRecipeButton), for: .touchUpInside)
@@ -99,7 +99,7 @@ class MessagesController: UIViewController {
         button.setTitle("Workout", for: UIControl.State())
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: UIControl.State())
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
         button.layer.cornerRadius = 5
         
         button.addTarget(self, action: #selector(handleWorkoutButton), for: .touchUpInside)
@@ -335,7 +335,7 @@ class MessagesController: UIViewController {
         //need x, y, width, height constraints
         menuImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         menuImageView.topAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        menuImageView.widthAnchor.constraint(equalToConstant: 415).isActive = true
+        menuImageView.widthAnchor.constraint(equalToConstant: 900).isActive = true
         menuImageView.heightAnchor.constraint(equalToConstant: -90).isActive = true
     }
     
