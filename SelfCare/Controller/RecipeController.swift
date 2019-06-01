@@ -31,7 +31,7 @@ class RecipeController: UIViewController {
     
     let recipeImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "recipe_background-1")
+        imageView.image = UIImage(named: "recipe_background")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         return imageView
