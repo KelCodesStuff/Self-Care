@@ -28,6 +28,8 @@
 		0CAD979F21FE6DE900F9E318 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAD979E21FE6DE900F9E318 /* LoginController.swift */; };
 		0CAD97A721FE835000F9E318 /* PoemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAD97A621FE835000F9E318 /* PoemController.swift */; };
 		0CAD97AB21FE839200F9E318 /* RecipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAD97AA21FE839200F9E318 /* RecipeController.swift */; };
+		0CBEF41B22A457E400C0947B /* JournalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBEF41A22A457E400C0947B /* JournalController.swift */; };
+		0CBEF41E22A459F400C0947B /* SelfCare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0CBEF41C22A459F400C0947B /* SelfCare.xcdatamodeld */; };
 		90C70C4E4F962DBBA8863798 /* libPods-SelfCareTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD93D67BAB3F6A1E4AA22DD /* libPods-SelfCareTests.a */; };
 		AF4CECA3EB9B7025C0FF9127 /* Pods_SelfCare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297EB9A328EDF1763A52B329 /* Pods_SelfCare.framework */; };
 		FE9C89FAA8C3712D6415E842 /* libPods-SelfCareUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88616D344946D41D7E1F0797 /* libPods-SelfCareUITests.a */; };
@@ -92,6 +94,8 @@
 		0CAD97A621FE835000F9E318 /* PoemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemController.swift; sourceTree = "<group>"; };
 		0CAD97A821FE837800F9E318 /* WineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WineController.swift; path = "/Users/KReid/Xcode-Projects/Self-Care/SelfCare/Controller/WineController.swift"; sourceTree = "<absolute>"; };
 		0CAD97AA21FE839200F9E318 /* RecipeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeController.swift; sourceTree = "<group>"; };
+		0CBEF41A22A457E400C0947B /* JournalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalController.swift; sourceTree = "<group>"; };
+		0CBEF41D22A459F400C0947B /* SelfCare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SelfCare.xcdatamodel; sourceTree = "<group>"; };
 		297EB9A328EDF1763A52B329 /* Pods_SelfCare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SelfCare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40C13A8FE5E8FBCD899288A9 /* Pods-SelfCareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SelfCareTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SelfCareTests/Pods-SelfCareTests.release.xcconfig"; sourceTree = "<group>"; };
 		4316385182AF0987FDC3EF22 /* Pods-SelfCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SelfCare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SelfCare/Pods-SelfCare.debug.xcconfig"; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 			children = (
 				0C083B1622068DC8007ABBA9 /* User.swift */,
 				0C083B1422065EF6007ABBA9 /* Message.swift */,
+				0CBEF41C22A459F400C0947B /* SelfCare.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 				0CAD979E21FE6DE900F9E318 /* LoginController.swift */,
 				0C92728E220627C40040FB0C /* LoginController+handlers.swift */,
 				0CAD976E21FE693600F9E318 /* MenuController.swift */,
+				0CBEF41A22A457E400C0947B /* JournalController.swift */,
 				0C69352F22A2F5A50037E40A /* ChatLogController.swift */,
 				0CAD97A621FE835000F9E318 /* PoemController.swift */,
 				0CAD97A821FE837800F9E318 /* WineController.swift */,
@@ -337,6 +343,7 @@
 				TargetAttributes = {
 					0CAD976821FE693600F9E318 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.HotspotConfiguration = {
 								enabled = 0;
@@ -354,10 +361,12 @@
 					};
 					0CAD977C21FE693C00F9E318 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 0CAD976821FE693600F9E318;
 					};
 					0CAD978721FE693C00F9E318 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 0CAD976821FE693600F9E318;
 					};
 				};
@@ -460,7 +469,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SelfCare/Pods-SelfCare-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-SelfCare/Pods-SelfCare-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities-framework/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/PushNotifications/PushNotifications.framework",
@@ -479,7 +488,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SelfCare/Pods-SelfCare-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SelfCare/Pods-SelfCare-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		878D4AC1BEE4D1B6D5C1A812 /* [CP] Check Pods Manifest.lock */ = {
@@ -535,6 +544,7 @@
 			files = (
 				0C69353122A302770037E40A /* WineController.swift in Sources */,
 				0C083B1222065E91007ABBA9 /* UserCell.swift in Sources */,
+				0CBEF41E22A459F400C0947B /* SelfCare.xcdatamodeld in Sources */,
 				0CAD97A721FE835000F9E318 /* PoemController.swift in Sources */,
 				0C083B1322065E91007ABBA9 /* ChatMessageCell.swift in Sources */,
 				0C92728F220627C40040FB0C /* LoginController+handlers.swift in Sources */,
@@ -546,6 +556,7 @@
 				0C69353022A2F5A50037E40A /* ChatLogController.swift in Sources */,
 				0C083B1522065EF6007ABBA9 /* Message.swift in Sources */,
 				0C927292220637BC0040FB0C /* Extensions.swift in Sources */,
+				0CBEF41B22A457E400C0947B /* JournalController.swift in Sources */,
 				0CAD976D21FE693600F9E318 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -742,7 +753,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kelreid.SelfCare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = SelfCareDevelopmentProfile;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -765,7 +776,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kelreid.SelfCare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = SelfCareDevelopmentProfile;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -786,7 +797,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kreid.SelfCareTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SelfCare.app/SelfCare";
 			};
@@ -808,7 +819,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kreid.SelfCareTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SelfCare.app/SelfCare";
 			};
@@ -829,7 +840,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kreid.SelfCareUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = SelfCare;
 			};
@@ -850,7 +861,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kreid.SelfCareUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = SelfCare;
 			};
@@ -896,6 +907,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0CBEF41C22A459F400C0947B /* SelfCare.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0CBEF41D22A459F400C0947B /* SelfCare.xcdatamodel */,
+			);
+			currentVersion = 0CBEF41D22A459F400C0947B /* SelfCare.xcdatamodel */;
+			path = SelfCare.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0CAD976121FE693600F9E318 /* Project object */;
 }
