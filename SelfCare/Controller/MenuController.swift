@@ -46,8 +46,7 @@ class MenuController: UIViewController, MFMailComposeViewControllerDelegate {
         view.backgroundColor = UIColor(r: 255, g: 255, b: 255)
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
-        let newMessageButton = UIImage(named: "new_message_icon")
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: newMessageButton, style: .plain, target: self, action: #selector(handleJournal))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Journal", style: .plain, target: self, action: #selector(handleJournal))
     
         view.addSubview(menuImageView)
         view.addSubview(chatButton)
@@ -265,8 +264,8 @@ class MenuController: UIViewController, MFMailComposeViewControllerDelegate {
     }
     
     @objc func handleJournal() {
-        let newPoemController = JournalController()
-        let navController = UINavigationController(rootViewController: newPoemController)
+        let newJournalController = JournalController()
+        let navController = UINavigationController(rootViewController: newJournalController)
         present(navController, animated: true, completion: nil)
     }
     
@@ -275,7 +274,7 @@ class MenuController: UIViewController, MFMailComposeViewControllerDelegate {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
             mail.setToRecipients(["theselfcareapp2019@gmail.com"])
-            mail.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
+//            mail.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
             
             present(mail, animated: true)
         } else {
