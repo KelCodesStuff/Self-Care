@@ -46,6 +46,8 @@ class MenuController: UIViewController, MFMailComposeViewControllerDelegate {
         view.backgroundColor = UIColor(r: 255, g: 255, b: 255)
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
+        let newMessageButton = UIImage(named: "new_message_icon")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: newMessageButton, style: .plain, target: self, action: #selector(handleJournal))
     
         view.addSubview(menuImageView)
         view.addSubview(chatButton)
@@ -78,7 +80,7 @@ class MenuController: UIViewController, MFMailComposeViewControllerDelegate {
     lazy var chatButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = UIColor(r: 0, g: 100, b: 200)
-        button.setTitle("Email", for: UIControl.State())
+        button.setTitle("Chat", for: UIControl.State())
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: UIControl.State())
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
@@ -262,6 +264,12 @@ class MenuController: UIViewController, MFMailComposeViewControllerDelegate {
         present(loginController, animated: true, completion: nil)
     }
     
+    @objc func handleJournal() {
+        let newPoemController = JournalController()
+        let navController = UINavigationController(rootViewController: newPoemController)
+        present(navController, animated: true, completion: nil)
+    }
+    
     @objc func sendEmail() {
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
@@ -308,7 +316,7 @@ class MenuController: UIViewController, MFMailComposeViewControllerDelegate {
         //need x, y, width, height constraints
         menuImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         menuImageView.topAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        menuImageView.widthAnchor.constraint(equalToConstant: 600).isActive = true
+        menuImageView.widthAnchor.constraint(equalToConstant: 900).isActive = true
         menuImageView.heightAnchor.constraint(equalToConstant: -100).isActive = true
     }
     
