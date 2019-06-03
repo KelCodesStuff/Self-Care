@@ -31,7 +31,7 @@ class JournalController: UITableViewController {
         }
         
         let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Person")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Journal")
         
         do {
             people = try managedContext.fetch(fetchRequest)
@@ -72,13 +72,13 @@ class JournalController: UITableViewController {
         }
         
         let managedContext = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "Person", in: managedContext)!
-        let person = NSManagedObject(entity: entity, insertInto: managedContext)
-        person.setValue(name, forKeyPath: "name")
+        let entity = NSEntityDescription.entity(forEntityName: "Journal", in: managedContext)!
+        let journal = NSManagedObject(entity: entity, insertInto: managedContext)
+        journal.setValue(name, forKeyPath: "name")
         
         do {
             try managedContext.save()
-            people.append(person)
+            people.append(journal)
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
@@ -94,9 +94,9 @@ extension JournalController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let person = people[indexPath.row]
+        let journal = people[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = person.value(forKeyPath: "name") as? String
+        cell.textLabel?.text = journal.value(forKeyPath: "name") as? String
         return cell
     }
 }
