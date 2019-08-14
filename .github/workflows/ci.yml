@@ -8,13 +8,13 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
     
     steps:
     - uses: actions/checkout@master
     - name: Run a one-line script
       run: echo Hello, world!
     - name: Run a multi-line scriptf\
-      run: |
+      run: echo SelfCare has passed!
         echo Add other actions to build,
         echo test, and deploy your project.
