@@ -15,7 +15,7 @@ extension UIColor {
   }
   
   static var incomingMessage: UIColor {
-    return UIColor(red: 230 / 255, green: 230 / 255, blue: 230 / 255, alpha: 1)
+    return UIColor(red: 0 / 255, green: 200 / 255, blue: 90 / 255, alpha: 1)
   }
   
 }
